@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug F103c8t6 (STLink)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/MDK-ARM/code/code.axf",
+            "servertype": "openocd",
+            "serverpath": "C:/Tools/openocd/bin/openocd.exe",
+            "device": "STM32F103C8",
+            "svdFile": "C:/Tools/cmsis-svd-stm32/stm32f1/STM32F103.svd",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f1x.cfg"
+            ],
+            "searchDir": [
+                "C:/Tools/openocd/scripts"
+            ],
+            "gdbPath": "C:/Tools/bin/arm-none-eabi-gdb.exe",
+            "openOCDPreConfigLaunchCommands": [
+                "adapter speed 4000"
+            ],
+            "preLaunchTask": "Build F103c8t6",
+            "runToEntryPoint": "main",
+            "rttConfig": {
+                "enabled": false
+            }
+        },
+        {
+            "name": "Debug F103c8t6 (JLink)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/MDK-ARM/code/code.axf",
+            "servertype": "jlink",
+            "device": "STM32F103C8",
+            "interface": "swd",
+            "jlinkpath": "${env:KEIL_PATH}/ARM/Segger/JLink.exe",
+            "gdbPath": "${env:ARM_GCC_PATH}/bin/arm-none-eabi-gdb.exe",
+            "preLaunchTask": "Build F103c8t6",
+            "runToEntryPoint": "main",
+            "rttConfig": {
+                "enabled": false
+            }
+        }
+    ]
+}
