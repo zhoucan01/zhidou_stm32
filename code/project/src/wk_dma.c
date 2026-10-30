@@ -1,0 +1,124 @@
+/* add user code begin Header */
+/**
+  **************************************************************************
+  * @file     wk_dma.c
+  * @brief    work bench config program
+  **************************************************************************
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
+  *
+  * The software Board Support Package (BSP) that is made available to
+  * download from Artery official website is the copyrighted work of Artery.
+  * Artery authorizes customers to use, copy, and distribute the BSP
+  * software and its related documentation for the purpose of design and
+  * development in conjunction with Artery microcontrollers. Use of the
+  * software is governed by this copyright notice and the following disclaimer.
+  *
+  * THIS SOFTWARE IS PROVIDED ON "AS IS" BASIS WITHOUT WARRANTIES,
+  * GUARANTEES OR REPRESENTATIONS OF ANY KIND. ARTERY EXPRESSLY DISCLAIMS,
+  * TO THE FULLEST EXTENT PERMITTED BY LAW, ALL EXPRESS, IMPLIED OR
+  * STATUTORY OR OTHER WARRANTIES, GUARANTEES OR REPRESENTATIONS,
+  * INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+  * FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+  *
+  **************************************************************************
+  */
+/* add user code end Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "wk_dma.h"
+
+/* add user code begin 0 */
+
+/* add user code end 0 */
+
+/**
+  * @brief  init dma1 channel1 for "usart3_rx"
+  * @param  none
+  * @retval none
+  */
+void wk_dma1_channel1_init(void)
+{
+  /* add user code begin dma1_channel1 0 */
+  /* 非循环模式：IDLE 中断里关 DMA → 读 dtcnt 取本帧 → 重载 → 重启，
+   * 参考 V1 (NUVELL_V1) 的可靠实现，避免循环 DMA 位置反算导致的数据顺序错乱。 */
+  /* add user code end dma1_channel1 0 */
+
+  dma_init_type dma_init_struct;
+
+  dma_reset(DMA1_CHANNEL1);
+  dma_default_para_init(&dma_init_struct);
+  dma_init_struct.direction = DMA_DIR_PERIPHERAL_TO_MEMORY;
+  dma_init_struct.memory_data_width = DMA_MEMORY_DATA_WIDTH_BYTE;
+  dma_init_struct.memory_inc_enable = TRUE;
+  dma_init_struct.peripheral_data_width = DMA_PERIPHERAL_DATA_WIDTH_BYTE;
+  dma_init_struct.peripheral_inc_enable = FALSE;
+  dma_init_struct.priority = DMA_PRIORITY_LOW;
+  dma_init_struct.loop_mode_enable = FALSE;
+  dma_init(DMA1_CHANNEL1, &dma_init_struct);
+	
+  /* flexible function enable */
+  dma_flexible_config(DMA1, FLEX_CHANNEL1, DMA_FLEXIBLE_UART3_RX);
+
+  /* add user code begin dma1_channel1 1 */
+
+  /* add user code end dma1_channel1 1 */
+}
+
+/**
+  * @brief  init dma1 channel2 for "uart5_rx"
+  * @param  none
+  * @retval none
+  */
+void wk_dma1_channel2_init(void)
+{
+  /* add user code begin dma1_channel2 0 */
+
+  /* add user code end dma1_channel2 0 */
+
+  dma_init_type dma_init_struct;
+
+  dma_reset(DMA1_CHANNEL2);
+  dma_default_para_init(&dma_init_struct);
+  dma_init_struct.direction = DMA_DIR_PERIPHERAL_TO_MEMORY;
+  dma_init_struct.memory_data_width = DMA_MEMORY_DATA_WIDTH_BYTE;
+  dma_init_struct.memory_inc_enable = TRUE;
+  dma_init_struct.peripheral_data_width = DMA_PERIPHERAL_DATA_WIDTH_BYTE;
+  dma_init_struct.peripheral_inc_enable = FALSE;
+  dma_init_struct.priority = DMA_PRIORITY_LOW;
+  dma_init_struct.loop_mode_enable = FALSE;
+  dma_init(DMA1_CHANNEL2, &dma_init_struct);
+	
+  /* flexible function enable */
+  dma_flexible_config(DMA1, FLEX_CHANNEL2, DMA_FLEXIBLE_UART5_RX);
+
+  /* add user code begin dma1_channel2 1 */
+
+  /* add user code end dma1_channel2 1 */
+}
+
+/**
+  * @brief  config dma channel transfer parameter
+  * @param  dmax_channely: DMAx_CHANNELy
+  * @param  peripheral_base_addr: peripheral address.
+  * @param  memory_base_addr: memory address.
+  * @param  buffer_size: buffer size.
+  * @retval none
+  */
+void wk_dma_channel_config(dma_channel_type* dmax_channely, uint32_t peripheral_base_addr, uint32_t memory_base_addr, uint16_t buffer_size)
+{
+  /* add user code begin dma_channel_config 0 */
+
+  /* add user code end dma_channel_config 0 */
+
+  dmax_channely->dtcnt = buffer_size;
+  dmax_channely->paddr = peripheral_base_addr;
+  dmax_channely->maddr = memory_base_addr;
+
+  /* add user code begin dma_channel_config 1 */
+
+  /* add user code end dma_channel_config 1 */
+}
+
+/* add user code begin 1 */
+
+/* add user code end 1 */

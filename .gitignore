@@ -1,0 +1,26 @@
+# Build products and dependency files
+build/
+**/objects/
+*.axf
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.d
+*.crf
+*.lst
+*.lnp
+*.iex
+*.dep
+build_log.txt
+flash_log.txt
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE user state
+*.uvguix.*
+*.uvoptx
+.vscode/
