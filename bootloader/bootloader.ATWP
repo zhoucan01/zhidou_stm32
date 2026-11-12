@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <WorkBenchVersion>
+        <Version>V1.2.02</Version>
+    </WorkBenchVersion>
+    <MCUInfo>
+        <MCUSerials>AT32F415</MCUSerials>
+        <MCUName>AT32F415R8T7</MCUName>
+        <MCUPackage>LQFP64</MCUPackage>
+    </MCUInfo>
+    <CRC>
+        <Mode>
+            <ModeSub name="CRC_State" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="InputDataReverseMode" value="CRC_REVERSE_INPUT_BY_BYTE"/>
+            <ParametersSub name="OutputDataReverseMode" value="CRC_REVERSE_OUTPUT_DATA"/>
+        </Parameters>
+    </CRC>
+    <DEBUG>
+        <Mode>
+            <ModeSub name="Debug interface" value="SWD"/>
+        </Mode>
+    </DEBUG>
+    <SYSTEM>
+        <Mode>
+            <ModeSub name="Time_Base" value="SysTick"/>
+        </Mode>
+    </SYSTEM>
+    <USART3>
+        <Mode>
+            <ModeSub name="Mode" value="Asynchronous"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="BaudRate" value="1000000"/>
+            <ParametersSub name="RealBaudRate" value="1000000"/>
+        </Parameters>
+        <Interrupts>
+            <InterruptsSub name="Interrupt_IDLE" value="TRUE"/>
+        </Interrupts>
+    </USART3>
+    <UART5>
+        <Mode>
+            <ModeSub name="Mode" value="Asynchronous"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="BaudRate" value="1000000"/>
+            <ParametersSub name="RealBaudRate" value="1000000"/>
+        </Parameters>
+    </UART5>
+    <DMA>
+        <USART3_RX>
+            <ParametersSub name="Instance" value="DMA1_Channel1"/>
+        </USART3_RX>
+    </DMA>
+    <NVIC>
+        <SysTick_Handler>1;15;0;0;0</SysTick_Handler>
+        <FLASH_IRQHandler>0;0;0;0;0</FLASH_IRQHandler>
+        <CRM_IRQHandler>0;0;0;0;0</CRM_IRQHandler>
+        <DMA1_Channel1_IRQHandler>1;0;0;0;0</DMA1_Channel1_IRQHandler>
+        <USART3_IRQHandler>1;3;0;0;0</USART3_IRQHandler>
+        <UART5_IRQHandler>0;0;0;0;0</UART5_IRQHandler>
+    </NVIC>
+    <ClockConfiguration>
+        <rtcsel>0</rtcsel>
+        <hext>8.000000</hext>
+        <pllhextdiv>0</pllhextdiv>
+        <pllrcs>1</pllrcs>
+        <pllmode>1</pllmode>
+        <pllmult>36</pllmult>
+        <pllms>1</pllms>
+        <pllns>150</pllns>
+        <pllfr>4</pllfr>
+        <sclkselect>1</sclkselect>
+        <ahbdiv>1</ahbdiv>
+        <apb1div>2</apb1div>
+        <apb2div>2</apb2div>
+        <usbdiv>3.0</usbdiv>
+        <hicktosclk>0</hicktosclk>
+        <clkout>0</clkout>
+        <clkoutdiv>1</clkoutdiv>
+        <adcdiv>4</adcdiv>
+        <systicsel>8</systicsel>
+    </ClockConfiguration>
+    <PINInfo>
+        <PinSub pinname="PB2/BOOT1" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PB10" signalname="USART3_TX" signaltype="2"/>
+        <PinSub pinname="PB11" signalname="USART3_RX" signaltype="2"/>
+        <PinSub pinname="PA13" signalname="DEBUG_JTMS_SWDIO" signaltype="2"/>
+        <PinSub pinname="PA14" signalname="DEBUG_JTCK_SWCLK" signaltype="2"/>
+        <PinSub pinname="PC12" signalname="UART5_TX" signaltype="2"/>
+        <PinSub pinname="PD2" signalname="UART5_RX" signaltype="2"/>
+    </PINInfo>
+    <ProjectInfomation>
+        <ProjectName>bootloader</ProjectName>
+        <ProjectLocation>C:/Users/29546/Desktop/code/machine/code/V2/at32f415bootloader</ProjectLocation>
+        <ToolchainIDE>MDK_V5</ToolchainIDE>
+        <ARMCompiler>0</ARMCompiler>
+        <KeepUserCode>true</KeepUserCode>
+        <NotUsedPinAnalog>false</NotUsedPinAnalog>
+        <CodeSplitIP>true</CodeSplitIP>
+        <AddNecessaryFileFlag>true</AddNecessaryFileFlag>
+        <MinHeapSize>0x200</MinHeapSize>
+        <MinStackSize>0x400</MinStackSize>
+        <UseFirmware>true</UseFirmware>
+        <PackageVersion>V2.1.8</PackageVersion>
+    </ProjectInfomation>
+</Root>

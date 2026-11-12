@@ -1,0 +1,5 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\application\KEIL\ARM\ARM\ARMCC\Bin'
+Build target 'bootloader'
+After Build - User command #1: fromelf.exe --bin --output .\Listings\bootloader.bin .\objects\bootloader.axf
+".\objects\bootloader.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:01

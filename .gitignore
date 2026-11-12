@@ -1,0 +1,45 @@
+# Keil MDK build output (configured in bootloader.uvprojx)
+/bootloader/project/MDK_V5/objects/
+/bootloader/project/MDK_V5/listings/
+
+# Compiled firmware and intermediate files, including output outside Keil folders
+*.o
+*.obj
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.crf
+*.d
+*.dep
+*.lnp
+*.build_log.htm
+
+# Keil per-user workspace and debug settings
+*.uvguix.*
+*.uvgui.*
+*.uvopt
+*.uvoptx
+*.uvproj.bak
+*.uvprojx.bak
+
+# Editor temporary files and backups
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+
+# Operating system metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Runtime OTA logs must never enter Git/Codex source snapshots.
+/AT32_OTA_PC/logs/
+ota_stress_*.log
+ota_stress_*.log.[1-3]
+ota_stress_*.jsonl
+ota_stress_*.jsonl.[1-3]
